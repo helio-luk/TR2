@@ -7,11 +7,11 @@
 
 #include <unistd.h>
 
-#include "Header.h"
-#include "Dado.h"
+#include "Header.hpp"
+#include "Dado.hpp"
 
 class PacoteIn{
-	public: 
+	public:
 		int socket = -1;
 		explicit PacoteIn(int porta);
 		~PacoteIn();

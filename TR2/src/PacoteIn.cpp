@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <unistd.h>
 
-#include "PacoteIn.h"
+#include "PacoteIn.hpp"
 
 int inSocket = -1;
 int numeroPorta;
@@ -48,14 +48,14 @@ void PacoteIn::accConexao(){
 void PacoteIn::getRequests(){
 	int valRead = 0;
 	std::string mensagem;
-	
+
 	do{
 		char buffer[1024];
-		valRead = static_cast<int>(read(socket, buffer, sizeof(buffer)));	
+		valRead = static_cast<int>(read(socket, buffer, sizeof(buffer)));
 		mensagem += std::string(buffer, static_cast<unsigned long>(valRead));
 	}while(valRead == 1024);
 	if(valRead > 0){
-		requestsRecebidos.push_back(HTTP::Header(mensagem));		
+		requestsRecebidos.push_back(HTTP::Header(mensagem));
 	}else if(0==valRead){
 		printf("não tem requests \n");
 	}else{

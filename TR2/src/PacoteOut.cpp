@@ -7,7 +7,7 @@
 #include <iostream>
 #include <sstream>
 
-#include "PacoteOut.h"
+#include "PacoteOut.hpp"
 
 PacoteOut::PacoteOut() = default;
 PacoteOut::~PacoteOut() = default;
@@ -47,7 +47,7 @@ ssize_t PacoteOut::Send(HTTP::Header msg){
 void PacoteOut::responseRecebidos(){
 	int valread = 0;
 	std::string mensagem("");
-	
+
 	do{
 		char buffer[1024];
 		valread = static_cast<int>(read(socketOut, buffer, sizeof(buffer)));
@@ -60,4 +60,3 @@ void PacoteOut::responseRecebidos(){
 		exit(1);
 	}
 }
-

@@ -5,7 +5,7 @@
 #include <vector>
 #include <tuple>
 
-#include "Dump.h"
+#include "Dump.hpp"
 
 #define campo std::tuple< std::string, std::string >
 
@@ -18,6 +18,6 @@ namespace HTTP{
 		std::string corpo;
 		std::string host;
 		std::string porta
-	};	
+	};
 };
 #endif

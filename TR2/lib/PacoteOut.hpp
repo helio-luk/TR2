@@ -7,8 +7,8 @@
 
 #include <unistd.h>
 
-#include "Header.h"
-#include "Dado.h"
+#include "Header.hpp"
+#include "Dado.hpp"
 
 class PacoteOut{
 	public:

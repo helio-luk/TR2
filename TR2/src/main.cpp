@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <cstring>
 
-#include "Servidor.h"
+#include "Servidor.hpp"
 
 #define PORTA_DEFAULT 8228
 
@@ -17,13 +17,14 @@ int main(int argc, char * const argv[]){
 			printf("Digite: -p <porta> \n");
 			exit(EXIT_FAILURE);
 		}
+		porta = strtol(argv[2], nullptr, 10);
+	}else
+	{
+		porta = PORTA_DEFAULT;
 	}
-	porta = strtol(argv[2], nullptr, 10);
 	if(porta < 1024 || porta > 65535){
 		printf("A porta deve estar entre 1024 e 65535 \n");
 		exit(EXIT_FAILURE);
-	}else{
-		porta = PORTA_DEFAULT;
 	}
 	Servidor servidor((int)porta);
 	servidor.Inicia();

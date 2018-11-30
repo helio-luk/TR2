@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "Header.hpp"
 namespace HTTP{
 	Header::Header(std::string& msg){
 		if(!msg.empty()){
@@ -14,7 +14,7 @@ namespace HTTP{
 				if(nomeHost == "Host"){
 					host = valor.substr(0, (valor.find(':')));
 					if(valor.size() > (valor.find(':')))
-						porta = valor.substr((valor.find(':'))+2);					
+						porta = valor.substr((valor.find(':'))+2);
 				}
 				campos.push_back(std::make_tuple(nomeHost, valor));
 				start = end+2;
@@ -36,7 +36,7 @@ namespace HTTP{
 			if(!corpo.empty()){
 				Dump::DumpHtml(corpo);
 			}
-			
+
 		}
 	}
 	std::string Header::to_string(bool include){
@@ -47,7 +47,7 @@ namespace HTTP{
 		msg +="\r\n";
 		msg += include? corpo : "";
 		return msg;
-		
+
 	}
 
 }
