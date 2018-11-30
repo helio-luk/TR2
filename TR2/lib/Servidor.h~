@@ -3,8 +3,8 @@
 
 #include <vector>
 
-#include "PacoteOut.h"
-#include "PacoteIn.h"
+#include "PackOut.h"
+#include "PackIn.h"
 #include "Header.h"
 #include "Dado.h"
 
@@ -18,8 +18,8 @@ class Servidor{
 		std::vector< HTTP::Header > &responses;
 		std::vector< HTTP::Header > sendResponse;
 	private:
-		PacoteIn pIn;
-		PacoteOut pOut;		
+		PackIn packIn;
+		PackOut packOut;		
 
 };
 #endif

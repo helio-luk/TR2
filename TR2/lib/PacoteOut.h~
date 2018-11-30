@@ -1,0 +1,11 @@
+#ifndef PACKOUT_H
+#define PACKOUT_H
+
+#include <string>
+#include <vector>
+#include <memory>
+
+#include <unistd.h>
+
+#include "Header.h"
+#include "Dado.h"

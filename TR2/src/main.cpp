@@ -25,7 +25,8 @@ int main(int argc, char * const argv[]){
 	}else{
 		porta = PORTA_DEFAULT;
 	}
-
+	Servidor servidor((int)porta);
+	servidor.Inicia();
 	return 0;
 
 }
