@@ -20,9 +20,9 @@ ssize_t PacoteOut::Send(HTTP::Header msg){
 	clienteEnd.ai_family = AF_INET;
 	clienteEnd.ai_socktype = INADDR_ANY;
 	clienteEnd.ai_flags = 0;
-	clientEnd.ai_protocol = 0;
+	clienteEnd.ai_protocol = 0;
 
-	int info = getaddrinfo(msg.host.c_str(), msg.port.c_str(), &clienteEnd, &cEnd);
+	int info = getaddrinfo(msg.host.c_str(), msg.porta.c_str(), &clienteEnd, &cEnd);
 	if(info == 0){
 		socketOut < socket(AF_INET, SOCK_STREAM, 0);
 		if(socketOut < 0){
@@ -44,7 +44,7 @@ ssize_t PacoteOut::Send(HTTP::Header msg){
 	return -1;
 }
 
-void PacoteOut::responseRecebidos(){
+void PacoteOut::responseRecebido(){
 	int valread = 0;
 	std::string mensagem("");
 

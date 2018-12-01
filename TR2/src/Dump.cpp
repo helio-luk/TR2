@@ -12,7 +12,7 @@ void Dump::DumpHtml(std::string corpo){
 		else{
 			fprintf(fp, corpo.c_str());
 			fclose(fp);
-			prinft("Dump Criado\n");
+			printf("Dump Criado\n");
 		}
 	}
 

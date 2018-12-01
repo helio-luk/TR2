@@ -12,12 +12,12 @@
 namespace HTTP{
 	struct Header{
 		explicit Header(std::string& str);
-		std::string to_string(bool include=True);
+		std::string to_string(bool include=true);
 		std::string linhaComeco;
 		std::vector<campo> campos;
 		std::string corpo;
 		std::string host;
-		std::string porta
+		std::string porta;
 	};
 };
 #endif

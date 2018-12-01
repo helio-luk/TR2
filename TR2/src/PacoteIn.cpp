@@ -11,7 +11,7 @@
 
 int inSocket = -1;
 int numeroPorta;
-struct endSockIn serverEnd;
+struct sockaddr_in serverEnd;
 socklen_t size;
 
 PacoteIn::PacoteIn(int porta){
@@ -38,8 +38,8 @@ PacoteIn::PacoteIn(int porta){
 PacoteIn::~PacoteIn() = default;
 
 void PacoteIn::accConexao(){
-	socket = accept(inSocket, nullptr, nullptr);
-	if(socket < 0){
+	socketIn = accept(inSocket, nullptr, nullptr);
+	if(socketIn < 0){
 		printf("erro na conexao\n");
 		exit(1);
 	}
@@ -51,7 +51,7 @@ void PacoteIn::getRequests(){
 
 	do{
 		char buffer[1024];
-		valRead = static_cast<int>(read(socket, buffer, sizeof(buffer)));
+		valRead = static_cast<int>(read(socketIn, buffer, sizeof(buffer)));
 		mensagem += std::string(buffer, static_cast<unsigned long>(valRead));
 	}while(valRead == 1024);
 	if(valRead > 0){
@@ -64,7 +64,7 @@ void PacoteIn::getRequests(){
 }
 
 ssize_t PacoteIn::Send(HTTP::Header msg){
-	ssize_t enviado = send(socket, msg.to_string().c_str(), msg.to_string().length(),0);
+	ssize_t enviado = send(socketIn, msg.to_string().c_str(), msg.to_string().length(),0);
 	if(enviado < 0){
 		printf("nao foi possivel enviar dado");
 		exit(1);

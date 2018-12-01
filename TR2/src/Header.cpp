@@ -9,7 +9,7 @@ namespace HTTP{
 			while((end = static_cast<unsigned int>(msg.find("\r\n"), start)), end > start){
 				std::string linha = msg.substr(start, end-start);
 				std::string nomeHost = linha.substr(0, (linha.find(':')));
-				std::string valor = linha.substr((linha.fing('':))+2);
+				std::string valor = linha.substr((linha.find(':'))+2);
 
 				if(nomeHost == "Host"){
 					host = valor.substr(0, (valor.find(':')));
@@ -19,7 +19,7 @@ namespace HTTP{
 				campos.push_back(std::make_tuple(nomeHost, valor));
 				start = end+2;
 			}
-			if(host.empty){
+			if(host.empty()){
 				auto init = static_cast<unsigned int>(linhaComeco.find("//")+2);
 				auto fim =  static_cast<unsigned int>(linhaComeco.find("//",init));
 				std::string valor = linhaComeco.substr(init, fim - init);
@@ -30,7 +30,7 @@ namespace HTTP{
 			}
 			if(host[0] == '[')
 				host = host.substr(1, host.size() - 2);
-			if(port.empty())
+			if(porta.empty())
 				porta = "80";
 			corpo = msg.substr(start+2);
 			if(!corpo.empty()){

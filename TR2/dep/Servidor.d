@@ -98,10 +98,34 @@ dep/Servidor.d bin/Servidor.o: src/Servidor.cpp \
  /usr/include/c++/4.9/bits/shared_ptr.h \
  /usr/include/c++/4.9/bits/shared_ptr_base.h \
  /usr/include/c++/4.9/ext/aligned_buffer.h \
- /usr/include/c++/4.9/backward/auto_ptr.h lib/Servidor.h \
+ /usr/include/c++/4.9/backward/auto_ptr.h lib/Servidor.hpp \
  /usr/include/c++/4.9/vector /usr/include/c++/4.9/bits/stl_vector.h \
  /usr/include/c++/4.9/bits/stl_bvector.h \
- /usr/include/c++/4.9/bits/vector.tcc
+ /usr/include/c++/4.9/bits/vector.tcc lib/PacoteOut.hpp \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ lib/Header.hpp lib/Dump.hpp /usr/include/c++/4.9/fstream \
+ /usr/include/c++/4.9/istream /usr/include/c++/4.9/ios \
+ /usr/include/c++/4.9/bits/ios_base.h \
+ /usr/include/c++/4.9/bits/locale_classes.h \
+ /usr/include/c++/4.9/bits/locale_classes.tcc \
+ /usr/include/c++/4.9/streambuf /usr/include/c++/4.9/bits/streambuf.tcc \
+ /usr/include/c++/4.9/bits/basic_ios.h \
+ /usr/include/c++/4.9/bits/locale_facets.h /usr/include/c++/4.9/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_base.h \
+ /usr/include/c++/4.9/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_inline.h \
+ /usr/include/c++/4.9/bits/locale_facets.tcc \
+ /usr/include/c++/4.9/bits/basic_ios.tcc /usr/include/c++/4.9/ostream \
+ /usr/include/c++/4.9/bits/ostream.tcc \
+ /usr/include/c++/4.9/bits/istream.tcc \
+ /usr/include/c++/4.9/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++io.h \
+ /usr/include/c++/4.9/bits/fstream.tcc /usr/include/c++/4.9/iostream \
+ lib/Dado.hpp lib/PacoteIn.hpp lib/Header.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -361,7 +385,7 @@ dep/Servidor.d bin/Servidor.o: src/Servidor.cpp \
 
 /usr/include/c++/4.9/backward/auto_ptr.h:
 
-lib/Servidor.h:
+lib/Servidor.hpp:
 
 /usr/include/c++/4.9/vector:
 
@@ -370,3 +394,75 @@ lib/Servidor.h:
 /usr/include/c++/4.9/bits/stl_bvector.h:
 
 /usr/include/c++/4.9/bits/vector.tcc:
+
+lib/PacoteOut.hpp:
+
+/usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/getopt.h:
+
+lib/Header.hpp:
+
+lib/Dump.hpp:
+
+/usr/include/c++/4.9/fstream:
+
+/usr/include/c++/4.9/istream:
+
+/usr/include/c++/4.9/ios:
+
+/usr/include/c++/4.9/bits/ios_base.h:
+
+/usr/include/c++/4.9/bits/locale_classes.h:
+
+/usr/include/c++/4.9/bits/locale_classes.tcc:
+
+/usr/include/c++/4.9/streambuf:
+
+/usr/include/c++/4.9/bits/streambuf.tcc:
+
+/usr/include/c++/4.9/bits/basic_ios.h:
+
+/usr/include/c++/4.9/bits/locale_facets.h:
+
+/usr/include/c++/4.9/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_base.h:
+
+/usr/include/c++/4.9/bits/streambuf_iterator.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_inline.h:
+
+/usr/include/c++/4.9/bits/locale_facets.tcc:
+
+/usr/include/c++/4.9/bits/basic_ios.tcc:
+
+/usr/include/c++/4.9/ostream:
+
+/usr/include/c++/4.9/bits/ostream.tcc:
+
+/usr/include/c++/4.9/bits/istream.tcc:
+
+/usr/include/c++/4.9/bits/codecvt.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/basic_file.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/c++io.h:
+
+/usr/include/c++/4.9/bits/fstream.tcc:
+
+/usr/include/c++/4.9/iostream:
+
+lib/Dado.hpp:
+
+lib/PacoteIn.hpp:
+
+lib/Header.hpp:

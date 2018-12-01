@@ -12,7 +12,7 @@
 
 class PacoteIn{
 	public:
-		int socket = -1;
+		int socketIn = -1;
 		explicit PacoteIn(int porta);
 		~PacoteIn();
 		void accConexao();
