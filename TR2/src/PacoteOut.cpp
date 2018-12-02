@@ -24,24 +24,7 @@ ssize_t PacoteOut::Send(HTTP::Header msg){
 	clienteEnd.ai_socktype = 0;
 	clienteEnd.ai_flags = 0;
 	clienteEnd.ai_protocol =IPPROTO_TCP;
-	int j=0;
-	int i;
-	char aux[127];
-	 strcpy(aux,msg.host.c_str());
-	for(i=strlen(aux)-1; j<2; i--)
-	{
-		if(aux[i]=='/')
-		{
-			j++;
-		}
-			aux[i]='\0';
-	}
-	printf("%s",aux);
-	int info;
-	do{
-		info = getaddrinfo(aux, msg.porta.c_str(), &clienteEnd, &cEnd);
-		printf("\naqui %d\n", info);
-	}while(info==-3);
+		int info = getaddrinfo(("http://"+msg.host).c_str(), msg.porta.c_str(), &clienteEnd, &cEnd);
 	 if(info == 0){
 		socketOut = socket(AF_INET, SOCK_STREAM, 0);
 		if(socketOut < 0){
@@ -49,13 +32,13 @@ ssize_t PacoteOut::Send(HTTP::Header msg){
 			exit(1);
 		}
 		if(connect(socketOut, cEnd->ai_addr, cEnd->ai_addrlen) < 0){
-			printf("error no socket");
+			printf("erro no socket\n");
 			exit(1);
 		}
 	 }
-
-	printf("\n%d\n", socketOut); //dando -1
+	 std::cout << msg.to_string() << '\n';
 	ssize_t enviado = send(socketOut, msg.to_string().c_str(), msg.to_string().length(), 0);
+
 	if(enviado < 0){
 		printf("nao foi possivel enviar dado\n");
 		exit(1);
@@ -68,12 +51,14 @@ ssize_t PacoteOut::Send(HTTP::Header msg){
 void PacoteOut::responseRecebido(){
 	int valread = 0;
 	std::string mensagem("");
+	memset(&responsesRecebidos, 0, sizeof(responsesRecebidos));
 
 	do{
 		char buffer[1024];
 		valread = static_cast<int>(read(socketOut, buffer, sizeof(buffer)));
 		mensagem += std::string(buffer, static_cast<unsigned long>(valread));
 	}while(valread == 1024);
+	printf("Response:\n%s\n",mensagem.c_str());
 	if(valread > 0){
 		responsesRecebidos.push_back(HTTP::Header(mensagem));
 	}else{

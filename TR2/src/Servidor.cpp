@@ -27,8 +27,8 @@ void Servidor::Inicia(){
 		printf("\nEnviando %d request(s)...\n", (int) sendRequest.size());
 
 		for (auto &i : sendRequest) {
-			printf("\nEnviando request para %s:%s\n", i.host.c_str(), i.porta.c_str());
-			printf("\n%s\n", i.to_string().c_str());
+			//std::cout << i.to_string() << '\n';
+			//std::cout << "\nEnviando request para " << i.host.c_str()<<i.porta.c_str();
 			if(pOut.Send(i) == -1){
 				printf("\nNão foi possível enviar request\n");
 				exit(1);
@@ -39,16 +39,16 @@ void Servidor::Inicia(){
 	pOut.responseRecebido();
 	if(!responses.empty())
 	{
-		std::swap(responses, sendRequest);
+		std::swap(responses, sendResponse);
 	}
 
-	if(!sendRequest.empty()) {
-		printf("\nEnviando %d response(s)...\n", (int) sendRequest.size());
+	if(!sendResponse.empty()) {
+		printf("\nEnviando %d response(s)...\n", (int) sendResponse.size());
 
 		for(auto &i : sendResponse) { //TÁ COM PROBLEMA AQUI
-			printf("\nResponse: \n%s\n", i.to_string().c_str());
+			printf("\nResponse: \n%s\n", i.host.c_str());
 			if(pIn.Send(i) == -1){
-				printf("\nNão foi possível enivar response\n");
+				printf("\nNão foi possível enviar response\n");
 				exit(1);
 			}
 		}

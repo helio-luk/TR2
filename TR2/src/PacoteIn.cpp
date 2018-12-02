@@ -6,12 +6,15 @@
 #include <arpa/inet.h>
 #include <cstdlib>
 #include <unistd.h>
+#include<netdb.h>
 
 #include "PacoteIn.hpp"
 
 int inSocket = -1;
 int numeroPorta;
 struct sockaddr_in serverEnd;
+struct addrinfo SEnd;
+struct addrinfo *lSEnd;
 socklen_t size;
 
 PacoteIn::PacoteIn(int porta){
@@ -21,8 +24,8 @@ PacoteIn::PacoteIn(int porta){
 		printf("Erro no socket\n");
 		exit(1);
 	}
-	printf("Server socket criado");
-	serverEnd.sin_family = AF_INET;
+	printf("Server socket criado\n");
+	serverEnd.sin_family = AF_UNSPEC;
 	serverEnd.sin_addr.s_addr = htons(INADDR_ANY);
 	serverEnd.sin_port = htons(static_cast<uint16_t>(porta));
 	if(bind(inSocket, (struct sockaddr*)&serverEnd, sizeof(serverEnd))<0){
@@ -53,8 +56,10 @@ void PacoteIn::getRequests(){
 		char buffer[1024];
 		valRead = static_cast<int>(read(socketIn, buffer, sizeof(buffer)));
 		mensagem += std::string(buffer, static_cast<unsigned long>(valRead));
+		printf("%s",mensagem.c_str());
 	}while(valRead == 1024);
 	if(valRead > 0){
+		//std::cout << "ok " << HTTP::Header(mensagem).to_string() << '\n';
 		requestsRecebidos.push_back(HTTP::Header(mensagem));
 	}else if(0==valRead){
 		printf("não tem requests \n");
@@ -64,6 +69,7 @@ void PacoteIn::getRequests(){
 }
 
 ssize_t PacoteIn::Send(HTTP::Header msg){
+	//std::cout << msg.to_string().c_str() << '\n';
 	ssize_t enviado = send(socketIn, msg.to_string().c_str(), msg.to_string().length(),0);
 	if(enviado < 0){
 		printf("nao foi possivel enviar dado");

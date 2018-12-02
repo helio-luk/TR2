@@ -110,7 +110,8 @@ dep/Header.d bin/Header.o: src/Header.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
- /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/iostream
+ /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/iostream \
+ /usr/include/string.h
 
 /usr/include/stdc-predef.h:
 
@@ -413,3 +414,5 @@ lib/Dump.hpp:
 /usr/include/c++/5/bits/fstream.tcc:
 
 /usr/include/c++/5/iostream:
+
+/usr/include/string.h:
