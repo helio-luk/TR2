@@ -1,1 +1,0 @@
- g++ T1.cpp -o base `pkg-config --cflags --libs gtk+-3.0`

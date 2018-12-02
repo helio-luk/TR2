@@ -19,7 +19,7 @@ LIBS += $(shell pkg-config --libs gtk+-3.0)
 # Diretivas de compilacao
 FLAGS = -std=c++11 -Wall -Wextra -Wno-unused-parameter -Werror=init-self
 # Diretivas extras para debug
-DFLAGS = -ggdb -O0 -DDEBUG
+DFLAGS = -g -O0 -DDEBUG
 # Diretivas extras para release
 RFLAGS = -O3 -mtune=native
 
@@ -49,7 +49,7 @@ RMDIR = rd /s /q
 # Comando para deletar um único arquivo
 RM = del /q
 
-LINK_PATH = 
+LINK_PATH =
 FLAGS += -mwindows
 DFLAGS += -mconsole
 LIBS := -lmingw32 $(LIBS)

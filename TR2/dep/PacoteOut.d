@@ -112,8 +112,9 @@ dep/PacoteOut.d bin/PacoteOut.o: src/PacoteOut.cpp \
  /usr/include/c++/4.9/bits/basic_ios.tcc \
  /usr/include/c++/4.9/bits/ostream.tcc /usr/include/c++/4.9/istream \
  /usr/include/c++/4.9/bits/istream.tcc /usr/include/c++/4.9/sstream \
- /usr/include/c++/4.9/bits/sstream.tcc lib/PacoteOut.hpp \
- /usr/include/c++/4.9/vector /usr/include/c++/4.9/bits/stl_construct.h \
+ /usr/include/c++/4.9/bits/sstream.tcc /usr/include/string.h \
+ lib/PacoteOut.hpp /usr/include/c++/4.9/vector \
+ /usr/include/c++/4.9/bits/stl_construct.h \
  /usr/include/c++/4.9/ext/alloc_traits.h \
  /usr/include/c++/4.9/bits/alloc_traits.h \
  /usr/include/c++/4.9/bits/stl_uninitialized.h \
@@ -434,6 +435,8 @@ dep/PacoteOut.d bin/PacoteOut.o: src/PacoteOut.cpp \
 /usr/include/c++/4.9/sstream:
 
 /usr/include/c++/4.9/bits/sstream.tcc:
+
+/usr/include/string.h:
 
 lib/PacoteOut.hpp:
 

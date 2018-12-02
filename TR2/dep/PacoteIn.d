@@ -113,8 +113,10 @@ dep/PacoteIn.d bin/PacoteIn.o: src/PacoteIn.cpp \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
- lib/PacoteIn.hpp /usr/include/c++/4.9/vector \
- /usr/include/c++/4.9/bits/stl_construct.h \
+ /usr/include/netdb.h /usr/include/rpc/netdb.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo.h \
+ /usr/include/x86_64-linux-gnu/bits/netdb.h lib/PacoteIn.hpp \
+ /usr/include/c++/4.9/vector /usr/include/c++/4.9/bits/stl_construct.h \
  /usr/include/c++/4.9/ext/alloc_traits.h \
  /usr/include/c++/4.9/bits/alloc_traits.h \
  /usr/include/c++/4.9/bits/stl_uninitialized.h \
@@ -433,6 +435,14 @@ dep/PacoteIn.d bin/PacoteIn.o: src/PacoteIn.cpp \
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/getopt.h:
+
+/usr/include/netdb.h:
+
+/usr/include/rpc/netdb.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo.h:
+
+/usr/include/x86_64-linux-gnu/bits/netdb.h:
 
 lib/PacoteIn.hpp:
 
